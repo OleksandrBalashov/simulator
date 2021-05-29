@@ -1,0 +1,25 @@
+.messageWrap {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.backgroundWrap {
+  padding: 20px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 20px;
+}
+
+.text {
+  margin: 0;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: #ffffff;
+  border-radius: 50%;
+  background-color: rgb(25, 0, 255);
+}

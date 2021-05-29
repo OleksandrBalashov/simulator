@@ -1,0 +1,18 @@
+.messageWrap {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.photo {
+  margin-right: 20px;
+}
+
+.backgroundWrap {
+  padding: 20px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 20px;
+}
+
+.text {
+  margin: 0;
+}

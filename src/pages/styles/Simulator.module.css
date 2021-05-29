@@ -1,0 +1,13 @@
+.wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 28;
+}
+
+.block {
+  margin-bottom: 60px;
+}
