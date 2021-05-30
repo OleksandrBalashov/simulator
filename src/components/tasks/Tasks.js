@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import styles from './Tasks.module.css';
 
-const Tasks = ({ onSubmit }) => {
+const Tasks = ({
+  data: { title, options, checkbox, answers, content },
+  onSubmit,
+}) => {
   const [value, setValue] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isChecked, setISChecked] = useState(false);
 
   const handleChange = ({ currentTarget: { value, name } }) => {
     setValue({ [name]: value });
@@ -10,93 +15,60 @@ const Tasks = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('click');
 
     onSubmit(false);
+    setIsVisible(true);
+    setISChecked(true);
   };
 
   return (
-    <div>
+    <div className={styles.wrap}>
       <h5 className={styles.title}>Задание</h5>
-      <p className={styles.text}>
-        Вспомни свой опыт пользования Facebook. Как думаешь, какую функцию
-        внедрила социальная сеть, чтобы больше пользователей достигали
-        Aha-момента — добавляли в друзья 10 человек как можно скорее?
-      </p>
+      <p className={styles.text}>{title.title}</p>
       <div className={styles.wrapTasks}>
-        <b className={styles.titleTask}>Выберите один из вариантов</b>
+        <b className={styles.titleTask}>{title.task}</b>
 
         <div>
           <form onSubmit={handleSubmit}>
-            <p>
-              <label>
-                <input
-                  className="with-gap"
-                  name="value"
-                  type="radio"
-                  value="Вы можете их знать"
-                  onChange={handleChange}
-                />
-                <span>Вы можете их знать</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input
-                  className="with-gap"
-                  name="value"
-                  type="radio"
-                  value="У кого может быть день рождения"
-                  onChange={handleChange}
-                />
-                <span>У кого может быть день рождения</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input
-                  className="with-gap"
-                  name="value"
-                  type="radio"
-                  value="Stories"
-                  onChange={handleChange}
-                />
-                <span>Stories</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input
-                  className="with-gap"
-                  name="value"
-                  type="radio"
-                  value="Реакция емодзи на пост"
-                  onChange={handleChange}
-                />
-                <span>Реакция емодзи на пост</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input
-                  className="with-gap"
-                  name="value"
-                  type="radio"
-                  value="Life-трансляция"
-                  onChange={handleChange}
-                />
-                <span>Life-трансляция</span>
-              </label>
-            </p>
+            {options.map(el => (
+              <p>
+                <label>
+                  <input
+                    className={checkbox ? 'filled-in' : 'with-gap'}
+                    name="value"
+                    type={checkbox ? 'checkbox' : 'radio'}
+                    value={el}
+                    onChange={handleChange}
+                  />
+                  <span>{el}</span>
+                </label>
+              </p>
+            ))}
             <button typ="submit" className="btn">
               Продолжить
             </button>
           </form>
         </div>
       </div>
-      <p className={styles.disableText}>
-        Дайте ответ на задание, чтобы продолжить
-      </p>
+      {!isVisible && (
+        <p className={styles.disableText}>
+          Дайте ответ на задание, чтобы продолжить
+        </p>
+      )}
+      {isVisible && (
+        <div className={styles.wrapCorrectAnswer}>
+          {checkbox ? (
+            <div className={styles.correctAnswers}>
+              {answers.map(el => (
+                <p>{el}</p>
+              ))}
+            </div>
+          ) : (
+            <p className={styles.correctAnswer}>{answers}</p>
+          )}
+        </div>
+      )}
+      {checkbox && isChecked && <p>{content}</p>}
     </div>
   );
 };

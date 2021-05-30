@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import AHaBlock from '../components/aHaBlock/AHaBlock';
 import Button from '../components/button/Button';
 import AlexMessages from '../components/chat/alex/AlexMessages';
 import UserMessages from '../components/chat/user/UserMessages';
 import Tasks from '../components/tasks/Tasks';
+import task1 from '../jsons/task1.json';
+import task2 from '../jsons/task2.json';
 import styles from './styles/Simulator.module.css';
 
 const Simulator = () => {
@@ -17,6 +20,8 @@ const Simulator = () => {
   const [block7, setBlock7] = useState(false);
   const [block8, setBlock8] = useState(false);
   const [block9, setBlock9] = useState(false);
+  const [block10, setBlock10] = useState(false);
+  const [block11, setBlock11] = useState(false);
 
   useEffect(() => {
     const addNewBlock = () => {
@@ -29,6 +34,11 @@ const Simulator = () => {
       if (count === 7) setBlock7(true);
       if (count === 8) setBlock8(true);
       if (count === 9) setBlock9(true);
+      if (count === 10) setBlock10(true);
+      if (count === 11) {
+        setBlock11(true);
+        setIsAble(true);
+      }
     };
 
     addNewBlock();
@@ -118,10 +128,12 @@ const Simulator = () => {
           </p>
         </div>
       )}
-      {block9 && <Tasks onSubmit={handleSubmit} />}
-      {!block9 && isAble ? null : (
+      {block9 && <Tasks data={task1} onSubmit={handleSubmit} />}
+      {block10 && <AHaBlock />}
+      {block11 && <Tasks data={task2} onSubmit={handleSubmit} />}
+      {!isAble || (!block9 && !block11) ? (
         <Button handleClick={() => setCount(prev => prev + 1)} />
-      )}
+      ) : null}
     </div>
   );
 };
