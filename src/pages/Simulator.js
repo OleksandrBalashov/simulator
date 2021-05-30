@@ -7,6 +7,7 @@ import styles from './styles/Simulator.module.css';
 
 const Simulator = () => {
   const [count, setCount] = useState(0);
+  const [isAble, setIsAble] = useState(true);
   const [block1, setBlock1] = useState(false);
   const [block2, setBlock2] = useState(false);
   const [block3, setBlock3] = useState(false);
@@ -39,6 +40,10 @@ const Simulator = () => {
       behavior: 'smooth',
     });
   });
+
+  const handleSubmit = value => {
+    setIsAble(value);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -87,7 +92,7 @@ const Simulator = () => {
         </p>
       )}
       {block8 && (
-        <div>
+        <div className={styles.block}>
           <p>
             Но сначала надо разобраться с воронкой продукта. Ее базовая идея
             такая — мы привлекаем 1000 пользователей, 300 начинают пользоваться
@@ -113,8 +118,10 @@ const Simulator = () => {
           </p>
         </div>
       )}
-      {block9 && <Tasks />}
-      <Button handleClick={() => setCount(prev => prev + 1)} />
+      {block9 && <Tasks onSubmit={handleSubmit} />}
+      {!block9 && isAble ? null : (
+        <Button handleClick={() => setCount(prev => prev + 1)} />
+      )}
     </div>
   );
 };
