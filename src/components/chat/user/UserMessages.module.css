@@ -1,19 +1,21 @@
-.messageWrap {
+.chatBlock {
   display: flex;
+  justify-content: flex-end;
   margin-bottom: 20px;
 }
 
-.backgroundWrap {
-  padding: 20px;
-  background-color: rgb(243, 243, 243);
+.wrapProfile {
+  padding: 15px;
+  margin-left: 170px;
+  border: 1px solid rgb(202, 200, 200);
   border-radius: 20px;
 }
 
-.text {
+.content {
   margin: 0;
 }
 
-.avatar {
+.profile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,4 +24,9 @@
   color: #ffffff;
   border-radius: 50%;
   background-color: rgb(25, 0, 255);
+  margin-left: 20px;
+}
+
+.name {
+  padding-top: 3px;
 }

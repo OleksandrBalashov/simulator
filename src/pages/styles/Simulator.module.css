@@ -1,6 +1,7 @@
 .wrapper {
   max-width: 700px;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .title {
@@ -10,4 +11,13 @@
 
 .block {
   margin-bottom: 60px;
+}
+
+.boltText {
+  display: block;
+  margin-bottom: 60px;
+}
+
+.containerChat {
+  margin-bottom: 40px;
 }

@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../components/button/Button';
-import AlexMessages from '../components/messages/alex/AlexMessages';
-import UserMessages from '../components/messages/user/UserMessages';
+import AlexMessages from '../components/chat/alex/AlexMessages';
+import UserMessages from '../components/chat/user/UserMessages';
+import Tasks from '../components/tasks/Tasks';
 import styles from './styles/Simulator.module.css';
 
 const Simulator = () => {
@@ -12,24 +13,32 @@ const Simulator = () => {
   const [block4, setBlock4] = useState(false);
   const [block5, setBlock5] = useState(false);
   const [block6, setBlock6] = useState(false);
-
-  // const countRef = useRef(0);
+  const [block7, setBlock7] = useState(false);
+  const [block8, setBlock8] = useState(false);
+  const [block9, setBlock9] = useState(false);
 
   useEffect(() => {
-    const handleClick = () => {
-      // countRef.current += 1;
-      // let { current: count } = countRef;
-
+    const addNewBlock = () => {
       if (count === 1) setBlock1(true);
       if (count === 2) setBlock2(true);
       if (count === 3) setBlock3(true);
       if (count === 4) setBlock4(true);
       if (count === 5) setBlock5(true);
       if (count === 6) setBlock6(true);
+      if (count === 7) setBlock7(true);
+      if (count === 8) setBlock8(true);
+      if (count === 9) setBlock9(true);
     };
 
-    handleClick();
+    addNewBlock();
   }, [count]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  });
 
   return (
     <div className={styles.wrapper}>
@@ -59,16 +68,52 @@ const Simulator = () => {
           Переход от активации к retention: Aha moment
         </h5>
       </div>
-
       {block1 && (
-        <b>Твой рабочий день начинается с сообщения Алекса, CEO Fungram.</b>
+        <b className={styles.boltText}>
+          Твой рабочий день начинается с сообщения Алекса, CEO Fungram.
+        </b>
       )}
-
-      {block2 && <AlexMessages count={0} />}
-      {block3 && <AlexMessages count={1} />}
-      {block4 && <UserMessages count={0} />}
-      {block5 && <AlexMessages count={2} />}
-      {block6 && <UserMessages count={1} />}
+      <div className={styles.containerChat}>
+        {block2 && <AlexMessages count={0} />}
+        {block3 && <AlexMessages count={1} />}
+        {block4 && <UserMessages count={0} />}
+        {block5 && <AlexMessages count={2} />}
+        {block6 && <UserMessages count={1} />}
+      </div>
+      {block7 && (
+        <p>
+          Твоя задача — улучшить Retention февральской когорты. В этом поможет
+          Aha-moment.
+        </p>
+      )}
+      {block8 && (
+        <div>
+          <p>
+            Но сначала надо разобраться с воронкой продукта. Ее базовая идея
+            такая — мы привлекаем 1000 пользователей, 300 начинают пользоваться
+            сервисом, 100 системно возвращаются, 50 приносят стабильный доход.
+          </p>
+          <p>
+            Чтобы пользователи возвращались в продукт, им нужно испытать Aha
+            moment. Те 200 пользователей, которые не испытали его, уходят из
+            приложения.
+          </p>
+          <p>
+            Aha-момент — это “момент озарения”, когда человек осознает ценность
+            продукта и принимает решение остаться его постоянным пользователем.
+            Чем больше людей проходят этот этап, тем выше Retention продукта
+            (возвращаемость).
+          </p>
+          <p>
+            Например, Facebook определил свой Aha-момент так: наличие 10 друзей
+            спустя 7 дней после регистрации. Оказалось, что это очень сильно
+            влияет на желание пользователя и дальше пользоваться социальной
+            сетью. Те, кто добавил меньше друзей, с большей вероятностью
+            забрасывали сайт.
+          </p>
+        </div>
+      )}
+      {block9 && <Tasks />}
       <Button handleClick={() => setCount(prev => prev + 1)} />
     </div>
   );
