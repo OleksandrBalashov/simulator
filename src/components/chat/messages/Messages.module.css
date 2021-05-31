@@ -3,8 +3,17 @@
   margin-bottom: 20px;
 }
 
+.wrapProfile {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
 .profile {
+  height: 100%;
+  object-fit: cover;
   margin-right: 20px;
+  border-radius: 50%;
 }
 
 .wrapContent {

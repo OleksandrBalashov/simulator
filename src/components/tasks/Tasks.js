@@ -31,7 +31,7 @@ const Tasks = ({
         <div>
           <form onSubmit={handleSubmit}>
             {options.map(el => (
-              <p>
+              <p key={el}>
                 <label>
                   <input
                     className={checkbox ? 'filled-in' : 'with-gap'}
@@ -60,7 +60,7 @@ const Tasks = ({
           {checkbox ? (
             <div className={styles.correctAnswers}>
               {answers.map(el => (
-                <p>{el}</p>
+                <p key={el}>{el}</p>
               ))}
             </div>
           ) : (
