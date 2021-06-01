@@ -1,0 +1,32 @@
+.chatBlock {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.wrapProfile {
+  padding: 15px;
+  margin-left: 170px;
+  border: 1px solid rgb(202, 200, 200);
+  border-radius: 20px;
+}
+
+.content {
+  margin: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: #ffffff;
+  border-radius: 50%;
+  background-color: rgb(25, 0, 255);
+  margin-left: 20px;
+}
+
+.name {
+  padding-top: 3px;
+}
