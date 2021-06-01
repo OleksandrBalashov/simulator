@@ -187,9 +187,9 @@ const Simulator = () => {
       )}
       {block25 && <Tasks data={task3} onSubmit={handleSubmit} />}
       {block26 && <Task4 data={task4} onSubmit={handleSubmit} />}
-      {block27 && <UserMessages count={7} />}
-      {block28 && <Messages count={9} />}
-      {block29 && <UserMessages count={8} />}
+      {block27 && <UserMessages message={7} />}
+      {block28 && <Messages message={9} />}
+      {block29 && <UserMessages message={8} />}
       {block30 && (
         <p className={styles.block}>
           Рабочий день подошел к концу, самое время отдохнуть.
