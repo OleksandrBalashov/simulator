@@ -10,6 +10,7 @@ import task2 from '../jsons/task2.json';
 import task3 from '../jsons/task3.json';
 import task4 from '../jsons/task4.json';
 import styles from './styles/Simulator.module.css';
+import ResultSimulator from '../components/resultSimulator/ResultSimulator';
 
 const Simulator = () => {
   const [count, setCount] = useState(0);
@@ -41,6 +42,10 @@ const Simulator = () => {
   const [block25, setBlock25] = useState(false);
   const [block26, setBlock26] = useState(false);
   const [block27, setBlock27] = useState(false);
+  const [block28, setBlock28] = useState(false);
+  const [block29, setBlock29] = useState(false);
+  const [block30, setBlock30] = useState(false);
+  const [block31, setBlock31] = useState(false);
 
   useEffect(() => {
     const addNewBlock = () => {
@@ -78,7 +83,10 @@ const Simulator = () => {
       if (count === 27) {
         setBlock27(true);
       }
-      // if (count === 27) setBlock27(true);
+      if (count === 28) setBlock28(true);
+      if (count === 29) setBlock29(true);
+      if (count === 30) setBlock30(true);
+      if (count === 31) setBlock31(true);
     };
 
     addNewBlock();
@@ -205,21 +213,20 @@ const Simulator = () => {
           выдвинуть гипотезы, которые помогут пользователям испытать его.
         </p>
       )}
-      {block25 && (
-        <>
-          <Tasks data={task3} onSubmit={handleSubmit} />
-        </>
-      )}
+      {block25 && <Tasks data={task3} onSubmit={handleSubmit} />}
       {block26 && <Task4 data={task4} onSubmit={handleSubmit} />}
-      {block27 && <p>block27</p>}
-
+      {block27 && <UserMessages count={7} />}
+      {block28 && <Messages count={9} />}
+      {block29 && <UserMessages count={8} />}
+      {block30 && (
+        <p className={styles.block}>
+          Рабочий день подошел к концу, самое время отдохнуть.
+        </p>
+      )}
+      {block31 && <ResultSimulator />}
       {!isAble || (!block9 && !block11 && !block26 && !block25) ? (
         <Button handleClick={() => setCount(prev => prev + 1)} />
       ) : null}
-      {/* {!isAble ||
-      (count !== 9 && count !== 11 && count !== 25 && count !== 26) ? (
-        <Button handleClick={() => setCount(prev => prev + 1)} />
-      ) : null} */}
     </div>
   );
 };
