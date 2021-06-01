@@ -7,7 +7,7 @@ const Tasks = ({
 }) => {
   const [value, setValue] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isChecked, setISChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = ({ currentTarget: { value, name } }) => {
     setValue({ [name]: value });
@@ -18,7 +18,7 @@ const Tasks = ({
 
     onSubmit(false);
     setIsVisible(true);
-    setISChecked(true);
+    setIsChecked(true);
   };
 
   return (

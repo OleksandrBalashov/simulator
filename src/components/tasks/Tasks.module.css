@@ -24,6 +24,10 @@
   color: rgb(25, 0, 255);
 }
 
+.input {
+  margin-bottom: 20px;
+}
+
 .disableText {
   text-align: center;
   color: rgb(209, 207, 207);
@@ -56,15 +60,16 @@
   margin: 0;
   border-radius: 10px;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.33);
+  margin-bottom: 40px;
 }
 
 .correctAnswers::before {
   position: absolute;
-  top: 40px;
+  top: 60px;
   left: 0;
   content: '';
   display: inline-block;
   background: rgb(25, 0, 255);
   width: 3px;
-  height: 350px;
+  height: 280px;
 }

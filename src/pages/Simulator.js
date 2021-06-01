@@ -4,8 +4,11 @@ import Button from '../components/button/Button';
 import Messages from '../components/chat/messages/Messages';
 import UserMessages from '../components/chat/user/UserMessages';
 import Tasks from '../components/tasks/Tasks';
+import Task4 from '../components/tasks/Task4';
 import task1 from '../jsons/task1.json';
 import task2 from '../jsons/task2.json';
+import task3 from '../jsons/task3.json';
+import task4 from '../jsons/task4.json';
 import styles from './styles/Simulator.module.css';
 
 const Simulator = () => {
@@ -68,9 +71,14 @@ const Simulator = () => {
       if (count === 22) setBlock22(true);
       if (count === 23) setBlock23(true);
       if (count === 24) setBlock24(true);
-      if (count === 25) setBlock25(true);
-      if (count === 26) setBlock26(true);
-      if (count === 27) setBlock27(true);
+      if (count === 25) {
+        setIsAble(true);
+        setBlock25(true);
+      }
+      if (count === 27) {
+        setBlock27(true);
+      }
+      // if (count === 27) setBlock27(true);
     };
 
     addNewBlock();
@@ -84,6 +92,16 @@ const Simulator = () => {
   });
 
   const handleSubmit = value => {
+    if (count === 25 && block26) {
+      setIsAble(false);
+      setCount(26);
+      return;
+    }
+
+    if (count === 25) {
+      return setBlock26(true);
+    }
+
     setIsAble(value);
   };
 
@@ -187,10 +205,21 @@ const Simulator = () => {
           выдвинуть гипотезы, которые помогут пользователям испытать его.
         </p>
       )}
+      {block25 && (
+        <>
+          <Tasks data={task3} onSubmit={handleSubmit} />
+        </>
+      )}
+      {block26 && <Task4 data={task4} onSubmit={handleSubmit} />}
+      {block27 && <p>block27</p>}
 
-      {!isAble || (!block9 && !block11) ? (
+      {!isAble || (!block9 && !block11 && !block26 && !block25) ? (
         <Button handleClick={() => setCount(prev => prev + 1)} />
       ) : null}
+      {/* {!isAble ||
+      (count !== 9 && count !== 11 && count !== 25 && count !== 26) ? (
+        <Button handleClick={() => setCount(prev => prev + 1)} />
+      ) : null} */}
     </div>
   );
 };
