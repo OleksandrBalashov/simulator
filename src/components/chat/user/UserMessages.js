@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './UserMessages.module.css';
 import data from '../../../jsons/data-user.json';
 
-const UserMessages = ({ count }) => {
+const UserMessages = ({ message }) => {
   return (
     <div className={styles.chatBlock}>
       <div className={styles.wrapProfile}>
-        <p className={styles.content}>{data[count].text}</p>
+        <p className={styles.content}>{data[message].text}</p>
       </div>
       <div>
         <div className={styles.profile}>

@@ -5,12 +5,14 @@ import Messages from '../components/chat/messages/Messages';
 import UserMessages from '../components/chat/user/UserMessages';
 import Tasks from '../components/tasks/Tasks';
 import Task4 from '../components/tasks/Task4';
+import data from '../jsons/data.json';
 import task1 from '../jsons/task1.json';
 import task2 from '../jsons/task2.json';
 import task3 from '../jsons/task3.json';
 import task4 from '../jsons/task4.json';
 import styles from './styles/Simulator.module.css';
 import ResultSimulator from '../components/resultSimulator/ResultSimulator';
+import ListSimulator from '../components/listSimulator/ListSimulator';
 
 const Simulator = () => {
   const [count, setCount] = useState(0);
@@ -126,22 +128,7 @@ const Simulator = () => {
         <h2 className="center-align">Simulator</h2>
 
         <div className={styles.block}>
-          <p>
-            Вы станете продакт-менеджером в стартапе Fungram, который недавно
-            запустил приложение со смешными короткими видео. Видео длятся не
-            больше 30 секунд и удаляются через 24 часа — смесь TikTok и Stories
-            в Instagram. От вас требуется найти Aha-момент продукта, чтобы
-            увеличить удержание пользователей.
-          </p>
-          <p>
-            Сначала мы разберемся, что с Aha moment на нескольких зарубежных
-            кейсах, а потом применим новую теорию на нашем продукте. В главе
-            будет 4 задания для закрепления нового навыка.
-          </p>
-          <p>
-            Это небольшой фрагмент реальной главы, поэтому прохождение займет не
-            больше 10 минут. Общаемся на “ты”
-          </p>
+          <ListSimulator data={data.heroContent} />
         </div>
 
         <h5 className={styles.title}>
@@ -154,11 +141,11 @@ const Simulator = () => {
         </b>
       )}
       <div className={styles.containerChat}>
-        {block2 && <Messages count={0} />}
-        {block3 && <Messages count={1} />}
-        {block4 && <UserMessages count={0} />}
-        {block5 && <Messages count={2} />}
-        {block6 && <UserMessages count={1} />}
+        {block2 && <Messages message={0} />}
+        {block3 && <Messages message={1} />}
+        {block4 && <UserMessages message={0} />}
+        {block5 && <Messages message={2} />}
+        {block6 && <UserMessages message={1} />}
       </div>
       {block7 && (
         <p>
@@ -168,29 +155,7 @@ const Simulator = () => {
       )}
       {block8 && (
         <div className={styles.block}>
-          <p>
-            Но сначала надо разобраться с воронкой продукта. Ее базовая идея
-            такая — мы привлекаем 1000 пользователей, 300 начинают пользоваться
-            сервисом, 100 системно возвращаются, 50 приносят стабильный доход.
-          </p>
-          <p>
-            Чтобы пользователи возвращались в продукт, им нужно испытать Aha
-            moment. Те 200 пользователей, которые не испытали его, уходят из
-            приложения.
-          </p>
-          <p>
-            Aha-момент — это “момент озарения”, когда человек осознает ценность
-            продукта и принимает решение остаться его постоянным пользователем.
-            Чем больше людей проходят этот этап, тем выше Retention продукта
-            (возвращаемость).
-          </p>
-          <p>
-            Например, Facebook определил свой Aha-момент так: наличие 10 друзей
-            спустя 7 дней после регистрации. Оказалось, что это очень сильно
-            влияет на желание пользователя и дальше пользоваться социальной
-            сетью. Те, кто добавил меньше друзей, с большей вероятностью
-            забрасывали сайт.
-          </p>
+          <ListSimulator data={data.content} />
         </div>
       )}
       {block9 && <Tasks data={task1} onSubmit={handleSubmit} />}
@@ -202,17 +167,17 @@ const Simulator = () => {
           спросить Лизу, продуктового аналитика. Она должна знать!
         </p>
       )}
-      {block13 && <UserMessages count={2} />}
-      {block14 && <Messages count={3} liza={true} />}
-      {block15 && <UserMessages count={3} />}
-      {block16 && <Messages count={4} liza={true} />}
-      {block17 && <Messages count={5} liza={true} />}
-      {block18 && <Messages count={6} liza={true} />}
-      {block19 && <UserMessages count={4} />}
-      {block20 && <Messages count={7} liza={true} />}
-      {block21 && <UserMessages count={5} />}
-      {block22 && <Messages count={8} liza={true} />}
-      {block23 && <UserMessages count={6} />}
+      {block13 && <UserMessages message={2} />}
+      {block14 && <Messages message={3} liza={true} />}
+      {block15 && <UserMessages message={3} />}
+      {block16 && <Messages message={4} liza={true} />}
+      {block17 && <Messages message={5} liza={true} />}
+      {block18 && <Messages message={6} liza={true} />}
+      {block19 && <UserMessages message={4} />}
+      {block20 && <Messages message={7} liza={true} />}
+      {block21 && <UserMessages message={5} />}
+      {block22 && <Messages message={8} liza={true} />}
+      {block23 && <UserMessages message={6} />}
 
       {block24 && (
         <p>

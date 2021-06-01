@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Messages.module.css';
 import data from '../../../jsons/data-messages.json';
 
-const Messages = ({ count, liza }) => {
+const Messages = ({ message, liza }) => {
   return (
     <div className={styles.chatBlock}>
       <div className={styles.wrapProfile}>
@@ -12,7 +12,7 @@ const Messages = ({ count, liza }) => {
               ? 'https://i.pinimg.com/originals/f9/44/5e/f9445e54b21a158b943b062115a6e96a.jpg'
               : 'https://womo.ua/wp-content/uploads/2020/01/imgonline-com-ua-Shape-Q5MWJicSdFd.jpg'
           }
-          alt=""
+          alt="profilePhoto"
           width="60"
           height="60"
           className={styles.profile}
@@ -20,7 +20,7 @@ const Messages = ({ count, liza }) => {
       </div>
 
       <div className={styles.wrapContent}>
-        <p className={styles.content}>{data[count].text}</p>
+        <p className={styles.content}>{data[message].text}</p>
       </div>
     </div>
   );
