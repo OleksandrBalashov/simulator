@@ -46,6 +46,7 @@ const Simulator = () => {
   const [block29, setBlock29] = useState(false);
   const [block30, setBlock30] = useState(false);
   const [block31, setBlock31] = useState(false);
+  const [block32, setBlock32] = useState(false);
 
   useEffect(() => {
     const addNewBlock = () => {
@@ -86,7 +87,13 @@ const Simulator = () => {
       if (count === 28) setBlock28(true);
       if (count === 29) setBlock29(true);
       if (count === 30) setBlock30(true);
-      if (count === 31) setBlock31(true);
+      if (count === 31) {
+        setBlock31(true);
+      }
+      if (count === 32) {
+        setBlock32(true);
+        setIsAble(true);
+      }
     };
 
     addNewBlock();
@@ -223,8 +230,14 @@ const Simulator = () => {
           Рабочий день подошел к концу, самое время отдохнуть.
         </p>
       )}
+
       {block31 && <ResultSimulator />}
-      {!isAble || (!block9 && !block11 && !block26 && !block25) ? (
+      {block32 && (
+        <div className={styles.wrapIcon}>
+          <i className="large material-icons">done</i>
+        </div>
+      )}
+      {!isAble || (!block9 && !block11 && !block32 && !block26 && !block25) ? (
         <Button handleClick={() => setCount(prev => prev + 1)} />
       ) : null}
     </div>
