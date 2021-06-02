@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import mainRoutes from '../../routers/mainRoutes';
 
 const NavigationRoutes = () => (
-  <Suspense fallback={<h1>loading...</h1>}>
+  <Suspense fallback={<h4 className="loading">loading...</h4>}>
     <Switch>
       {mainRoutes.map(({ path, exact, component }) => (
         <Route path={path} exact={exact} component={component} key={path} />

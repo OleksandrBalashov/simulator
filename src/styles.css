@@ -19,3 +19,7 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+.loading {
+  text-align: center;
+}
