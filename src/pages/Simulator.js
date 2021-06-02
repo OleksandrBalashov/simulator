@@ -10,9 +10,9 @@ import task1 from '../jsons/task1.json';
 import task2 from '../jsons/task2.json';
 import task3 from '../jsons/task3.json';
 import task4 from '../jsons/task4.json';
+import ResultSimulator from '../components/resultSimulator';
+import List from '../components/list';
 import styles from './styles/Simulator.module.css';
-import ResultSimulator from '../components/resultSimulator/ResultSimulator';
-import ListSimulator from '../components/listSimulator/ListSimulator';
 
 const Simulator = () => {
   const [count, setCount] = useState(0);
@@ -128,7 +128,7 @@ const Simulator = () => {
         <h2 className="center-align">Simulator</h2>
 
         <div className={styles.block}>
-          <ListSimulator data={data.heroContent} />
+          <List data={data.heroContent} />
         </div>
 
         <h5 className={styles.title}>
@@ -155,7 +155,7 @@ const Simulator = () => {
       )}
       {block8 && (
         <div className={styles.block}>
-          <ListSimulator data={data.content} />
+          <List data={data.content} />
         </div>
       )}
       {block9 && <Tasks data={task1} onSubmit={handleSubmit} />}
