@@ -23,3 +23,7 @@ body {
 .loading {
   text-align: center;
 }
+
+.container.auth-container {
+  max-width: 600px;
+}
