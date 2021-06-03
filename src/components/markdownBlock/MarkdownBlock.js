@@ -2,9 +2,9 @@ import React from 'react';
 import img from '../../images/Aha-momnt.png';
 import socials from '../../images/A-Ha-socials.png';
 import stats from '../../images/Statistics.png';
-import styles from './AHBlock.module.css';
+import styles from './MarkdownBlock.module.css';
 
-const AHaBlock = () => {
+const MarkdownBlock = () => {
   return (
     <div className={styles.wrap}>
       <p>
@@ -62,4 +62,4 @@ const AHaBlock = () => {
   );
 };
 
-export default AHaBlock;
+export default MarkdownBlock;

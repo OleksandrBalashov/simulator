@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AHaBlock from '../components/aHaBlock/AHaBlock';
+import MarkdownBlock from '../components/markdownBlock';
 import Button from '../components/button/Button';
 import Messages from '../components/chat/messages/Messages';
 import UserMessages from '../components/chat/user/UserMessages';
@@ -159,7 +159,7 @@ const Simulator = () => {
         </div>
       )}
       {block9 && <Tasks data={task1} onSubmit={handleSubmit} />}
-      {block10 && <AHaBlock />}
+      {block10 && <MarkdownBlock />}
       {block11 && <Tasks data={task2} onSubmit={handleSubmit} />}
       {block12 && (
         <p className={styles.title}>
