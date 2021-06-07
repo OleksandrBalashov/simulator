@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './Tasks.module.css';
+import { isVisibleBtn } from '../../redux/simulator/simulatorReducer';
 
 const Tasks = ({
-  data: { title, options, checkbox, answers, content },
+  condition,
+  options,
+  checkbox,
+  answers,
+  content,
   onSubmit,
 }) => {
   const [value, setValue] = useState(null);
+  const dispatch = useDispatch();
+
   const [isVisible, setIsVisible] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
@@ -16,7 +24,7 @@ const Tasks = ({
   const handleSubmit = e => {
     e.preventDefault();
 
-    onSubmit(false);
+    dispatch(isVisibleBtn(false));
     setIsVisible(true);
     setIsChecked(true);
   };
@@ -24,9 +32,9 @@ const Tasks = ({
   return (
     <div className={styles.wrap}>
       <h5 className={styles.title}>Задание</h5>
-      <p className={styles.text}>{title.title}</p>
+      <p className={styles.text}>{condition.title}</p>
       <div className={styles.wrapTasks}>
-        <b className={styles.titleTask}>{title.task}</b>
+        <b className={styles.titleTask}>{condition.task}</b>
 
         <div>
           <form onSubmit={handleSubmit}>

@@ -3,6 +3,7 @@ import styles from './Messages.module.css';
 import data from '../../../jsons/data-messages.json';
 
 const Messages = ({ message, liza }) => {
+  console.log(message);
   return (
     <div className={styles.chatBlock}>
       <div className={styles.wrapProfile}>
@@ -20,7 +21,7 @@ const Messages = ({ message, liza }) => {
       </div>
 
       <div className={styles.wrapContent}>
-        <p className={styles.content}>{data[message].text}</p>
+        <p className={styles.content}>{message}</p>
       </div>
     </div>
   );
