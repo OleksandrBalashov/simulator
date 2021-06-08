@@ -2,13 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const simulatorSlice = createSlice({
   name: 'simulator',
-  initialState: true,
+  initialState: false,
   reducers: {
-    isVisibleBtn: (_, { payload }) => {
-      console.log(payload);
-
-      return payload;
-    },
+    isVisibleBtn: (_, { payload }) => payload,
   },
 });
 

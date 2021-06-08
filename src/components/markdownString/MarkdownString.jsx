@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './MarkdownString.module.css';
 
-const MarkdownString = ({ text, bolt }) => {
-  console.log({ text });
+const MarkdownString = ({ text, bold }) => {
   return (
     <div className={styles.wrap}>
-      {bolt ? <b>{text}</b> : <div>{text}</div>}
+      {bold ? <b>{text}</b> : <div>{text}</div>}
     </div>
   );
 };

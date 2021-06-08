@@ -1,16 +1,13 @@
 import React from 'react';
-import result from '../../jsons/result.json';
 import styles from './ResultSimulator.module.css';
 
-const ResultSimulator = () => {
-  const { title, list } = result;
-
+const ResultSimulator = ({ title, conclusions }) => {
   return (
     <>
       <h4 className={styles.title}>{title}</h4>
       {
         <ul>
-          {list.map(el => (
+          {conclusions.map(el => (
             <li key={el}>
               <p>{el}</p>
             </li>

@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './List.module.css';
 
 const List = ({ list, desc }) => {
-  console.log(list);
   return (
     <div className={styles.wrap}>
       <ul className={styles.list}>

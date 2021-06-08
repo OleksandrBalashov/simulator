@@ -24,7 +24,7 @@ const Tasks = ({
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(isVisibleBtn(false));
+    dispatch(isVisibleBtn(true));
     setIsVisible(true);
     setIsChecked(true);
   };

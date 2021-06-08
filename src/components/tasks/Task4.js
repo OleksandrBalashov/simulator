@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Tasks.module.css';
 
-const Task4 = ({ data: { title, answers }, onSubmit }) => {
+const Task4 = ({ title, answers }) => {
   const [value, setValue] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -13,7 +13,7 @@ const Task4 = ({ data: { title, answers }, onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    onSubmit(false);
+    // onSubmit(false);
     setIsVisible(true);
     setIsChecked(true);
   };
