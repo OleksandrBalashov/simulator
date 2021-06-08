@@ -1,7 +1,4 @@
 import React from 'react';
-// import img from '../../images/Aha-momnt.png';
-// import socials from '../../images/A-Ha-socials.png';
-// import stats from '../../images/Statistics.png';
 import styles from './MarkdownBlock.module.css';
 import ListMarkdown from './ListMarkdown';
 

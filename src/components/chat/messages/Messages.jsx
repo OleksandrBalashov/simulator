@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Messages.module.css';
-import data from '../../../jsons/data-messages.json';
 
 const Messages = ({ message, liza }) => {
   return (
