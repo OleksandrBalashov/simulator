@@ -24,7 +24,7 @@ const RoadMap = () => {
       </div>
 
       <div className={styles.list}>
-        <List data={conclusion} />
+        <List list={conclusion} />
       </div>
     </div>
   );
