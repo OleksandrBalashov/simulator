@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Tasks.module.css';
 
-const Task4 = ({ title, answers }) => {
+const Task4 = ({ title, answers, onSubmit }) => {
   const [value, setValue] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = ({ currentTarget: { value, name } }) => {
     setValue({ [name]: value });
@@ -13,9 +12,8 @@ const Task4 = ({ title, answers }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // onSubmit(false);
+    onSubmit();
     setIsVisible(true);
-    setIsChecked(true);
   };
 
   return (
@@ -32,7 +30,7 @@ const Task4 = ({ title, answers }) => {
               className={styles.input}
             />
           </label>
-          <button typ="submit" className="btn">
+          <button typ="submit" className={!value ? 'btn disabled' : 'btn'}>
             Продолжить
           </button>
         </form>

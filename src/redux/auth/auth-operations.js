@@ -1,9 +1,21 @@
-import firebas from '../../firebase/config';
+import firebase from '../../firebase/config';
+import registerUser from './auth-reducer';
 
-export const registerUser = ({ email, password, name }) => async dispatch => {
-  const user = await firebas
+export const authRegisterUser = ({
+  email,
+  password,
+  name,
+}) => async dispatch => {
+  const user = await firebase
     .auth()
     .createUserWithEmailAndPassword(email, password);
 
-  console.log(user);
+  const newUser = {
+    email: user.email,
+    userId: user.uid,
+  };
+
+  // dispatch(registerUser(newUser));
+
+  console.log(newUser);
 };

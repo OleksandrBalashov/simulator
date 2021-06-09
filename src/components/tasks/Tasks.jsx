@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import styles from './Tasks.module.css';
-import { isVisibleBtn } from '../../redux/simulator/simulatorReducer';
 
 const Tasks = ({
   condition,
@@ -11,20 +9,18 @@ const Tasks = ({
   content,
   onSubmit,
 }) => {
-  const [value, setValue] = useState(null);
-  const dispatch = useDispatch();
-
+  const [value, setValue] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = ({ currentTarget: { value, name } }) => {
-    setValue({ [name]: value });
+    checkbox ? setValue(prev => [...prev, value]) : setValue([value]);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(isVisibleBtn(true));
+    onSubmit();
     setIsVisible(true);
     setIsChecked(true);
   };
@@ -52,7 +48,16 @@ const Tasks = ({
                 </label>
               </p>
             ))}
-            <button typ="submit" className="btn">
+            <button
+              typ="submit"
+              className={
+                value.length === 0
+                  ? 'btn disabled'
+                  : value.length < 2 && checkbox
+                  ? 'btn  disabled'
+                  : 'btn'
+              }
+            >
               Продолжить
             </button>
           </form>
@@ -72,7 +77,11 @@ const Tasks = ({
               ))}
             </div>
           ) : (
-            <p className={styles.correctAnswer}>{answers}</p>
+            <p className={styles.correctAnswer}>
+              {value[0] === 'Вы можете их знать' && !checkbox
+                ? answers[0]
+                : answers[1]}
+            </p>
           )}
         </div>
       )}

@@ -14,7 +14,19 @@ const mainRoutes = [
     path: '/auth',
     exact: true,
     component: lazy(() =>
-      import('../pages/Auth' /* webpackChunkName: 'AuthPage'*/),
+      import(
+        '../pages/Authorization' /* webpackChunkName: 'AuthorizationPage'*/
+      ),
+    ),
+  },
+  {
+    name: 'Register',
+    path: '/auth/login',
+    exact: true,
+    component: lazy(() =>
+      import(
+        '../components/forms/auth/Auth' /* webpackChunkName: 'AuthorizationPage'*/
+      ),
     ),
   },
   {
