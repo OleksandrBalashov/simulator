@@ -1,3 +1,8 @@
+.navWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .list {
   display: flex;
 }

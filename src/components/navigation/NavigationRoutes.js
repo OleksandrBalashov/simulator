@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router';
 import mainRoutes from '../../routers/mainRoutes';
+import Spinner from '../spinner';
 
 const NavigationRoutes = () => (
-  <Suspense fallback={<h4 className="loading">loading...</h4>}>
+  <Suspense fallback={<Spinner />}>
     <Switch>
       {mainRoutes.map(({ path, exact, component }) => (
         <Route path={path} exact={exact} component={component} key={path} />

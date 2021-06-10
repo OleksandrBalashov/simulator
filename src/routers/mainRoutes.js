@@ -13,6 +13,7 @@ const mainRoutes = [
   {
     name: 'Войти',
     path: '/auth',
+    restricted: true,
     exact: true,
     navLink: true,
     component: lazy(() =>
