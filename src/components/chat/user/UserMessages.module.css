@@ -5,8 +5,9 @@
 }
 
 .wrapProfile {
+  width: 420px;
   padding: 15px;
-  margin-left: 170px;
+
   border: 1px solid rgb(202, 200, 200);
   border-radius: 20px;
 }
@@ -29,4 +30,16 @@
 
 .name {
   padding-top: 3px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapProfile {
+    width: 250px;
+  }
+
+  .profile {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
 }

@@ -14,6 +14,24 @@
   margin-right: 30px;
 }
 
+.wrapGoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9e9e9e;
+  margin-right: 30px;
+}
+
 .linkText {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapLink {
+    flex-direction: column;
+  }
+
+  .wrapGoogle {
+    margin-bottom: 20px;
+  }
 }

@@ -14,7 +14,9 @@ const App = () => {
   return (
     <>
       <AppBar />
-      <NavigationRoutes />
+      <div className="container offset-s6">
+        <NavigationRoutes />
+      </div>
     </>
   );
 };

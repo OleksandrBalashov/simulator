@@ -15,6 +15,12 @@ body {
   line-height: 1.5;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .btn-large {
   display: block;
   margin: 0 auto;
@@ -26,4 +32,14 @@ body {
 
 .container.auth-container {
   max-width: 600px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 767px;
+  }
 }
