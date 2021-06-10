@@ -39,7 +39,6 @@ export const authStateChangeUser = () => dispatch => {
     dispatch(isLoading());
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log('if authStateChangeUser');
         const { displayName, email, uid } = user;
 
         const currentUser = {
