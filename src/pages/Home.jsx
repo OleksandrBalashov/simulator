@@ -1,18 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { authStateChangeUser } from '../redux/auth/auth-operations';
+import React from 'react';
 
 const Home = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(authStateChangeUser());
-  }, [dispatch]);
-
   return (
-    <div>
-      <h1>Home Page</h1>
-      <h2>Slider</h2>
+    <div className="container">
+      <h1>Очень крутой слайдер</h1>
     </div>
   );
 };

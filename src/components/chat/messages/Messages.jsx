@@ -1,7 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { getUserName } from '../../../redux/auth/auth-selector';
 import styles from './Messages.module.css';
 
 const Messages = ({ message, liza }) => {
+  const name = useSelector(getUserName);
+
   return (
     <div className={styles.chatBlock}>
       <div className={styles.wrapProfile}>
@@ -19,7 +23,12 @@ const Messages = ({ message, liza }) => {
       </div>
 
       <div className={styles.wrapContent}>
-        <p className={styles.content}>{message}</p>
+        <p className={styles.content}>
+          {message ===
+          ', привет! Смотрел вчера отчет от нашего аналитика Джона. Retention январской когорты совсем низкий — только 5% пользователей остаются после недели в продукте.'
+            ? `${name}${message}`
+            : message}
+        </p>
       </div>
     </div>
   );

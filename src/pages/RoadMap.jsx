@@ -1,16 +1,16 @@
 import React from 'react';
 import List from '../components/list';
 import OrderedList from '../components/orderedList';
-import roadMap from '../images/road-map.jpeg';
 import data from '../jsons/data-roadMap.json';
 import styles from './styles/RoadMap.module.css';
 
 const RoadMap = () => {
-  const { title, list, desc, conclusion } = data;
+  const { img, title, list, desc, conclusion } = data;
+
   return (
     <div className="container">
       <div className={styles.wrapImg}>
-        <img src={roadMap} alt="roadMap" />
+        <img src={img} alt="roadMap" />
       </div>
       <h4 className={styles.title}>{title}</h4>
 

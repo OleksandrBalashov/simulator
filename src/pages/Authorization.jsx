@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { ReactComponent as GoogleLogo } from '../images/svg/google_logo.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useHistory, useRouteMatch } from 'react-router-dom';
