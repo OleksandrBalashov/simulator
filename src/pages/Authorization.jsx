@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useRouteMatch } from 'react-router-dom';
 import Register from '../components/forms/register';
+import styles from './styles/Authorization.module.css';
 
 const Authorization = () => {
   const match = useRouteMatch();
@@ -9,7 +10,10 @@ const Authorization = () => {
     <div className="container auth-container">
       <Register />
 
-      <NavLink to={`${match.url}/login`}>Войти</NavLink>
+      <div className={styles.wrapLink}>
+        <span className={styles.linkText}>Есть аккаунт?</span>
+        <NavLink to={`${match.url}/login`}>Войти</NavLink>
+      </div>
     </div>
   );
 };

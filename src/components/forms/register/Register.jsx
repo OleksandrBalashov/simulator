@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authRegisterUser } from '../../../redux/auth/auth-operations';
+import { registerUser } from '../../../redux/auth/auth-operations';
 import styles from './Register.module.css';
 
 const initialState = {
@@ -18,8 +18,8 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(state);
-    dispatch(authRegisterUser(state));
+
+    dispatch(registerUser(state));
   };
 
   return (
@@ -27,6 +27,10 @@ const Register = () => {
       <h4 className={styles.title}>Создать аккаунт</h4>
       <form className="col s12" onSubmit={handleSubmit}>
         <div className="row">
+          <div className="input-field col s12">
+            <input id="name" type="text" className="validate" />
+            <label htmlFor="text">Name</label>
+          </div>
           <div className="input-field col s12">
             <input
               id="email"
