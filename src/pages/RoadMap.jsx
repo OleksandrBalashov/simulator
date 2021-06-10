@@ -8,11 +8,11 @@ const RoadMap = () => {
   const { img, title, list, desc, conclusion } = data;
 
   return (
-    <div className="container">
+    <div className={styles.wrap}>
       <div className={styles.wrapImg}>
         <img src={img} alt="roadMap" />
       </div>
-      <h4 className={styles.title}>{title}</h4>
+      <h5 className={styles.title}>{title}</h5>
 
       <div className={styles.list}>
         <OrderedList data={list} />

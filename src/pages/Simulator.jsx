@@ -50,7 +50,7 @@ const Simulator = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.block}>
-        <h2 className="center-align">Simulator</h2>
+        <h3 className="center-align">Симулятор</h3>
         {visibleElements}
       </div>
       {isVisibleBtn && <Button handleClick={showElement} />}

@@ -1,0 +1,26 @@
+[
+  {
+    "text": "После рассказа об актуальных зарплатах украинских разработчиков и тестировщиков ресурс DOU.UA опубликовал заключительную часть исследования, в которой рассказал о том, сколько получают остальные IT-специалисты. В данный раздел попали менеджеры, дизайнеры, специалисты по HR, продажам и маркетингу, а также девопсы, сисадмины и др.",
+    "img": "https://i1.wp.com/itc.ua/wp-content/uploads/2020/08/salary-report-tech-nontech-june-2020.png?resize=770%2C459&quality=100&strip=all&ssl=1"
+  },
+  {
+    "text": "Среди респондентов общего зарплатного опроса таких сотрудников оказалось 3745 человек из 12419 всех опрошенных. В этот раз в общий список также добавили Customer Success Manager, Data Engineer и Product Owner, а вот позицию Team Lead объединили с Tech Lead и включили в раздел с зарплатами разработчиков. Все зарплаты указаны в долларах США по курсу межбанка, чистыми — после уплаты налогов.",
+    "img": "https://i0.wp.com/itc.ua/wp-content/uploads/2020/08/salary-report-tech-nontech-june-2020-2.png?resize=770%2C494&quality=100&strip=all&ssl=1"
+  },
+  {
+    "text": "Выборка специалистов данного профиля гендерно-сбалансирована — 47% женщин и 53% мужчин. Если анализировать в разрезе специальностей, то можно выделить группы с большинством женщин (91% в категории HR-специалистов и 82% в категории Technical Writers и Copywriters) и группы с большинством мужчин (это чаще технические специальности DBA/DevOps/Sysadmin — 95% мужчин, Data Engineers (85%) и HTML Coders (71%)). Самые молодые специалисты — по маркетингу, дизайнеры и HR (медиана 27 лет), самые старшие — менеджеры и DBA / DevOps / Sysadmin (30 лет). Топ-3 мест жительства среди IT-специалистов — Киев (49%), Харьков (15%) и Львов (12%).",
+    "img": "https://i0.wp.com/itc.ua/wp-content/uploads/2020/08/salary-report-tech-nontech-june-2020-3.png?quality=100&strip=all&ssl=1"
+  },
+  {
+    "text": "Три крупнейшие группы IT-специалистов по должности: HR (18%), PM (13%) и Designer (11%). За последний год заметно снизилась доля специалистов со стажем работы до 2 лет — с 46% в июне 2019 года до 32% в июне 2020 года. Больше всего специалистов со стажем до 2 лет среди Analysts (Data Science, Data Analysts, Business Analysts, Research Engineers) и Other technical (HTML Coders, Data Engineers, BI Engineers и другие) — доля на уровне 42-43%. А вот группа DBA/DevOps/Sysadmin наиболее опытная — доля специалистов со стажем 6+ лет здесь на уровне 43%. Средняя заработная плата таких IT-специалистов составляет $1400, что на $200 больше по сравнению с опросом декабря 2019 года и на $300 больше, чем в июне 2019 года. Если сравнивать с зарплатами разработчиков, то другие IT-специалисты получают в среднем на $900 меньше.",
+    "img": "https://i2.wp.com/itc.ua/wp-content/uploads/2020/08/salary-report-tech-nontech-june-2020-4.png?quality=100&strip=all&ssl=1"
+  },
+  {
+    "text": "Среди наиболее распространенных должностей (от 100 анкет) рост произошел для Business Analyst +$320, Data Science +$200, Designer +$148 и DevOps +$100. Самые высокие зарплаты получают Director of Engineering / Program Director — $5500, Senior Project Manager/Program Manager — $4000 и Product Owner — $3150. HTML-Coder’ы получают меньше всех — $650.",
+    "img": "https://i0.wp.com/itc.ua/wp-content/uploads/2020/08/salary-report-tech-nontech-june-2020-5.png?resize=770%2C550&quality=100&strip=all&ssl=1"
+  },
+  {
+    "text": "Оплата труда ожидаемо растет с увеличением рабочего стажа. Так, в среднем специалисты со стажем до года получают $540, 1-3 года — $1000, 4-6 лет — $1700 и со стажем более 7 лет — $2800. Больше всего получают Director of Engineering / Program Director и Senior Project Manager / Program Manager со стажем 7+ лет — $5770 и $4000 соответственно. В среднем уровень зарплат в Киеве на $450 больше, чем во Львове, и на $650 больше, чем в Харькове.",
+    "img": "https://i0.wp.com/itc.ua/wp-content/uploads/2020/08/salary-report-tech-nontech-june-2020-9.png?fit=770%2C164&quality=100&strip=all&ssl=1"
+  }
+]

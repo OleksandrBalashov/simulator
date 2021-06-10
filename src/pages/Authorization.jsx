@@ -39,7 +39,7 @@ const Authorization = () => {
       <Register />
 
       <div className={styles.wrapLink}>
-        <div className={styles.wrapLink}>
+        <div className={styles.wrapGoogle}>
           <span className={styles.linkText}>Или с помощью:</span>
           <a href=" " target="_blank" onClick={handleGoogleAuth}>
             <GoogleLogo width="32" />

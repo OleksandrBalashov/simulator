@@ -94,7 +94,7 @@ const Auth = () => {
       </div>
 
       <div className={styles.wrapLink}>
-        <div className={styles.wrapLink}>
+        <div className={styles.wrapGoogle}>
           <span className={styles.linkText}>Или с помощью:</span>
           <a href=" " onClick={handleGoogleAuth}>
             <GoogleLogo width="32" />
