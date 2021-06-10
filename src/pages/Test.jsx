@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TestLogo from '../images/test.svg';
 import styles from './styles/Test.module.css';
+import Questions from './Questions';
 
 const Test = () => {
+  const [message, setMessage] = useState(false);
+
   const handleClick = e => {
-    console.log('🥇 new Page');
+    setMessage(true);
+    console.log(message);
   };
-  return (
+  return !message ? (
     <div className={styles.boxTest}>
       <h1 className={styles.title}>
         Пройдите тест на определение профориентации
@@ -21,6 +25,8 @@ const Test = () => {
         Начать
       </button>
     </div>
+  ) : (
+    <Questions />
   );
 };
 

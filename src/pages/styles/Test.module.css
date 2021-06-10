@@ -33,3 +33,39 @@
 .btn:hover {
   cursor: pointer;
 }
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cards:first-child {
+  margin-right: 16px;
+}
+
+.box {
+  margin-top: 24px;
+  width: 156px;
+  height: 300px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10%;
+  right: 35%;
+}
+
+.progresSize {
+  width: 650px;
+  height: 3px;
+  background-color: #f2f2f7;
+  margin-top: 50px;
+}
+
+.progresSize::before {
+  content: '';
+  display: block;
+  width: 20%;
+  height: 100%;
+  background: #4a20ef;
+}
