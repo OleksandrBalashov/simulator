@@ -2,57 +2,78 @@ import { lazy } from 'react';
 
 const mainRoutes = [
   {
-    name: 'Home',
+    name: 'Главная',
     path: '/',
     exact: true,
+    navLink: true,
     component: lazy(() =>
       import('../pages/Home' /* webpackChunkName: 'HomePage'*/),
     ),
   },
   {
-    name: 'Auth',
+    name: 'Войти',
     path: '/auth',
+    restricted: true,
     exact: true,
+    navLink: true,
     component: lazy(() =>
-      import('../pages/Auth' /* webpackChunkName: 'AuthPage'*/),
+      import(
+        '../pages/Authorization' /* webpackChunkName: 'AuthorizationPage'*/
+      ),
     ),
   },
   {
-    name: 'Test',
+    name: 'Регистр',
+    path: '/auth/login',
+    exact: true,
+    navLink: false,
+    component: lazy(() =>
+      import(
+        '../components/forms/auth/Auth' /* webpackChunkName: 'AuthorizationPage'*/
+      ),
+    ),
+  },
+  {
+    name: 'Тест',
     path: '/test',
     exact: true,
+    navLink: true,
     component: lazy(() =>
       import('../pages/Test' /* webpackChunkName: 'TestPage'*/),
     ),
   },
   {
-    name: 'Results',
+    name: 'Результат',
     path: '/results',
     exact: true,
+    navLink: true,
     component: lazy(() =>
       import('../pages/Results' /* webpackChunkName: 'ResultPage'*/),
     ),
   },
   {
-    name: 'Simulator',
+    name: 'Симулятор',
     path: '/simulator',
     exact: true,
+    navLink: true,
     component: lazy(() =>
       import('../pages/Simulator' /* webpackChunkName: 'SimulatorPage'*/),
     ),
   },
   {
-    name: 'RoadMap',
+    name: 'Карта',
     path: '/map',
     exact: true,
+    navLink: true,
     component: lazy(() =>
       import('../pages/RoadMap' /* webpackChunkName: 'RoadMapPage'*/),
     ),
   },
   {
-    name: 'Statistic',
+    name: 'Статистика',
     path: '/statistic',
     exact: true,
+    navLink: true,
     component: lazy(() =>
       import('../pages/Statistics' /* webpackChunkName: 'StatisticPage'*/),
     ),
