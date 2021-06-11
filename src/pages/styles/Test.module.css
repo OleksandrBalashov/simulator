@@ -1,0 +1,71 @@
+.boxTest {
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.title {
+  text-align: center;
+}
+
+.testLogo {
+  display: block;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  width: 328px;
+  height: 50px;
+  text-align: center;
+  background-color: #4a20ef;
+  color: white;
+  border-radius: 30px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cards:first-child {
+  margin-right: 16px;
+}
+
+.box {
+  margin-top: 24px;
+  width: 156px;
+  height: 300px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10%;
+  right: 35%;
+}
+
+.progresSize {
+  width: 650px;
+  height: 3px;
+  background-color: #f2f2f7;
+  margin-top: 50px;
+}
+
+.progresSize::before {
+  content: '';
+  display: block;
+  width: 20%;
+  height: 100%;
+  background: #4a20ef;
+}
