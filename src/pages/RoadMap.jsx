@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonNext from '../components/buttonNext';
 import List from '../components/list';
 import OrderedList from '../components/orderedList';
 import data from '../jsons/data-roadMap.json';
@@ -26,6 +27,7 @@ const RoadMap = () => {
       <div className={styles.list}>
         <List list={conclusion} />
       </div>
+      <ButtonNext dest={'/statistic'} />
     </div>
   );
 };

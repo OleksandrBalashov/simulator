@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Button from '../components/button/Button';
-import styles from './styles/Simulator.module.css';
 import { blocks } from '../blocks/blocks';
+import Button from '../components/button/Button';
+import ButtonNext from '../components/buttonNext';
+import styles from './styles/Simulator.module.css';
 
 const Simulator = () => {
   const [elements, setElements] = useState(blocks);
   const [isVisibleBtn, setisVisibleBtn] = useState(true);
+  const [isAbleBtnNext, setIsAbleBtnNext] = useState(false);
 
   const showElement = () => {
     const newElements = elements.map(item => ({ ...item }));
@@ -14,8 +16,12 @@ const Simulator = () => {
     newElements[idx].visible = true;
     const { name } = newElements[idx].component.type;
 
-    if (name === 'Tasks' || name === 'Task4' || name === 'IconDone')
+    if (name === 'Tasks' || name === 'Task4') setisVisibleBtn(false);
+
+    if (name === 'IconDone') {
       setisVisibleBtn(false);
+      setIsAbleBtnNext(true);
+    }
 
     setElements(newElements);
   };
@@ -54,6 +60,7 @@ const Simulator = () => {
         {visibleElements}
       </div>
       {isVisibleBtn && <Button handleClick={showElement} />}
+      {isAbleBtnNext && <ButtonNext dest={'/map'} />}
     </div>
   );
 };
